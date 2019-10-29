@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <div>
-      <logo />
       <video-list />
       <h1 class="title">
         vlog-page
@@ -30,12 +29,10 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 import VideoList from '~/components/VideoList.vue'
 
 export default {
   components: {
-    Logo,
     VideoList
   },
   data () {

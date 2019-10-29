@@ -1,27 +1,28 @@
+import VideoDataService from '~/services/youtube-data-service'
+
 export const strict = false
 export const state = () => ({
   });
 
 export const actions = {
-   async nuxtServerInit({commit, dispatch}, {req}) {
-    const response = await this.$axios.$get(
-      "https://www.googleapis.com/youtube/v3/search?part=snippet&fields=items(id(videoId)%2Csnippet(title%2Cdescription))&channelId=UCXuqSBlHAE6Xw-yeJA0Tunw&maxResults=2&order=date&type=video&videoEmbeddable=true&key=" + process.env.GOOGLE_API_KEY
-    );
+    async nuxtServerInit({commit, dispatch}, {req}) {
 
-    const videos = response.items.map(v => ({
-      id: v.id.videoId,
-      description: v.snippet.description,
-      title: v.snippet.title,
-      url: "https://www.youtube.com/watch?v=" + v.id.videoId
-    }));
-    
-    commit("setVideos", videos);
+    // const videos = await VideoDataService.GetAllVideos();
+
+    // commit("setVideos", videos);
+
+    const videosGropued = await VideoDataService.GetVideosGrouped();
+
+    commit("setVideosGrouped", videosGropued);
   }
 };
 
 export const mutations = {
     setVideos (state, value) {
       state.videos = value
+    },
+    setVideosGrouped (state, value) {
+      state.videosGrouped = value
     }
   }
 
