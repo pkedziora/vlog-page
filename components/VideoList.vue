@@ -1,12 +1,5 @@
 <template>
 <div>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="/images/logo.png" width="125" height="31">
-    </a>
-  </div>
-</nav>
 <!-- <h1>Ungropued</h1>
   <ul>
     <li v-for="video in videos" :key="video.id">
