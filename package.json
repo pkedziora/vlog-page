@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest",
-    "data": "node scripts\\get-channel-data.js"
+    "data": "node scripts/get-channel-data.js"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
