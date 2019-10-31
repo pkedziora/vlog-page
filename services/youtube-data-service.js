@@ -43,7 +43,7 @@ export default {
     for (var i = 0; i < uploadIds.length; i++)
     {
       var channelClone = _.cloneDeep(channels[i]);
-      var result = await this.getVideosForPlaylist(uploadIds[i], 10);
+      var result = await this.getVideosForPlaylist(uploadIds[i], 5);
       channelClone.videos = result;
       channelsWithVideos.push(channelClone);
     }
