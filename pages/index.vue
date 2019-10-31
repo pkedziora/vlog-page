@@ -29,9 +29,14 @@ export default {
 </script>
 
 <style>
+body {
+  background-color: rgb(241, 241, 241);
+}
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
+  max-width: 1060px;
   display: flex;
   justify-content: center;
   align-items: center;

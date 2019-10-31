@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="videoListContainer">
   <ul>
     <li v-for="group in videosGrouped" :key="group.id">
       <video-group :group="group" />
@@ -30,4 +30,7 @@ export default {
 </script>
 
 <style>
+.videoListContainer {
+  margin-top: 30px;
+}
 </style>

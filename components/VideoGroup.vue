@@ -16,10 +16,10 @@
       <div class="videoGroupContainer">
         <ul>
         <li v-for="video in videosFiltered" :key="video.id">
-          <video-item :video="video" />
+          <video-item :video="video" :group="group" />
         </li>
         </ul>
-        <button @click="showMore(group.id)">Show more</button>
+        <button class="button is-link" @click="showMore(group.id)">Show more from {{group.title}}</button>
       </div>
 
 </div>
@@ -61,13 +61,10 @@ h1 {
   font-size: 1.8em;
 }
 
-.videoGroupContainer
-{
-  margin-left: 30px;
+.videoGroupContainer {
 }
 
 .groupContainer {
-  margin: 30px;
   margin-bottom: 60px;
 }
 
@@ -87,6 +84,7 @@ h1 {
 }
 
 .channelHeader {
+  background-color: white;
   display: flex;
   width: 100%;
 }
