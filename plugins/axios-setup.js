@@ -1,5 +1,5 @@
-import { setAxios } from '~/services/axios-service'
+import { setAxios } from '~/services/axios-service';
 
-export default ({ app, store }) => {
-  setAxios(app.$axios)
-}
+export default ({ app }) => {
+  setAxios(app.$axios);
+};
