@@ -16,5 +16,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    "no-plusplus": "off",
+    "no-param-reassign": "off"
   }
 }

@@ -43,12 +43,12 @@ async function GetByChannelId(id) {
 async function GetAllChannels() {
   const result = [];
   for (let i = 0; i < channels.userNames.length; i++) {
-    const response = GetByUsername(channels.userNames[i]);
+    const response = await GetByUsername(channels.userNames[i]);
     result.push(response);
   }
 
   for (let i = 0; i < channels.channelIds.length; i++) {
-    const response = GetByChannelId(channels.channelIds[i]);
+    const response = await GetByChannelId(channels.channelIds[i]);
     result.push(response);
   }
 
