@@ -14,9 +14,23 @@ module.exports = {
     'plugin:nuxt/recommended'
     //'@nuxtjs',
   ],
-  // add your custom rules here
   rules: {
+    "no-console": "off",
     "no-plusplus": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "import/no-extraneous-dependencies": "off"
+  },
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: {
+          resolve: {
+            alias: {
+              '~': __dirname,
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -41,16 +41,16 @@ async function GetByChannelId(id) {
 }
 
 async function GetAllChannels() {
-  const result = [];
+  const promises = [];
   for (let i = 0; i < channels.userNames.length; i++) {
-    const response = await GetByUsername(channels.userNames[i]);
-    result.push(response);
+    promises.push(GetByUsername(channels.userNames[i]));
   }
 
   for (let i = 0; i < channels.channelIds.length; i++) {
-    const response = await GetByChannelId(channels.channelIds[i]);
-    result.push(response);
+    promises.push(GetByChannelId(channels.channelIds[i]));
   }
+
+  const result = await Promise.all(promises);
 
   return result;
 }
