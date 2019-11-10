@@ -5,6 +5,9 @@ env:
     GOOGLE_API_KEY: /CodeBuild/GOOGLE_API_KEY
 
 phases:
+  install:
+      runtime-versions:
+        nodejs: 10
   build:
     commands:
        - yarn build
