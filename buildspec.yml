@@ -10,4 +10,5 @@ phases:
         nodejs: 10
   build:
     commands:
+       - yarn install
        - yarn build
