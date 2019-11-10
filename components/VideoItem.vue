@@ -3,7 +3,7 @@
 <div class="card videoItemContainer">
   <div class="card-image">
 
-      <iframe loading="lazy" type="text/html"
+      <iframe :title="video.title" loading="lazy" type="text/html"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
           :src="'https://www.youtube.com/embed/' + video.id" frameborder="0"></iframe>
