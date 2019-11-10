@@ -9,6 +9,7 @@
         </div>
       </nav>
       <video-list />
+      <span>{{version}}</span>
     </div>
   </div>
 </template>
@@ -22,8 +23,10 @@ export default {
   },
   data () {
     return {
-      videos: []
     }
+  },
+  async created () {
+    this.version = this.$store.state.version;
   }
 }
 </script>

@@ -44,7 +44,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/separate-env',
-    ['@nuxtjs/google-tag-manager', { id: 'GTM-PV3CJ53' }]
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-PV3CJ53' }],
   ],
   eslint: {
     /* module options */

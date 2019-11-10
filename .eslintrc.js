@@ -18,7 +18,8 @@ module.exports = {
     "no-console": "off",
     "no-plusplus": "off",
     "no-param-reassign": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "linebreak-style": "off"
   },
   settings: {
     'import/resolver': {
