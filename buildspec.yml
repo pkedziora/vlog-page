@@ -13,6 +13,8 @@ phases:
        - yarn install
        - yarn data #temporary
        - yarn build
+       - pwd
+       - ls
        - ls dist
 
 artifacts:    
