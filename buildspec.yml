@@ -18,3 +18,4 @@ artifacts:
   files:
     - '**/*'
   base-directory: dist
+  name: vlog-page-0.1.$CODEBUILD_BUILD_NUMBER 
