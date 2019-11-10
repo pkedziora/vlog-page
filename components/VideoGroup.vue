@@ -1,11 +1,11 @@
 <template>
 <div class="groupContainer">
       <div class="bannerContainer">
-          <img :src="group.image.bannerImageUrl"/>
+          <img :src="group.image.bannerImageUrl" :alt="group.title + ' banner image'"/>
       </div>
       <div class="channelHeader">
         <div class="thumbnailContainer">
-          <img :src="group.thumbnails.medium.url"/>
+          <img :src="group.thumbnails.medium.url" :alt="group.title + ' thumbnail'"/>
         </div>
         <div class="channelData">
           <h1>{{group.title}}</h1>

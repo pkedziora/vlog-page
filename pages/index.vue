@@ -4,7 +4,7 @@
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
-            <img src="/images/logo.png" width="125" height="31" />
+            <img src="/images/logo.png" alt="Website logo" width="125" height="31" />
           </a>
         </div>
       </nav>
