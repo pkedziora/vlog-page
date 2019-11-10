@@ -55,8 +55,8 @@ export default {
 
 #logo {
   height: 31px;
-  width: 125px;
   max-height: 125px;
+  width: 125px;
 }
 
 body {
