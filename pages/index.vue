@@ -4,7 +4,7 @@
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
-            <img src="/images/logo.png" alt="Website logo" width="125" height="31" />
+            <img id="logo" src="/images/logo.png" alt="Website logo" />
           </a>
         </div>
       </nav>
@@ -35,7 +35,7 @@ export default {
         { hid: 'description', name: 'description', content: 'Latests videos from tech youtubers. Laptop, mobile tech, gadget reviews and more' },
         { property:'og:type', content:'website' },
         { property:'og:title', content:'Vlog.Page - Tech' },
-        { property:'og:description', content:'Latests videos from tech youtubers. Laptop, mobile tech, gadget reviews and more' },
+        { property:'og:description', content:'Latests videos from tech youtubers, laptop, mobile tech, gadget reviews and more' },
         { property:'og:image', content:'' },
         { property:'og:url', content:'https://vlog.page' },
         { property:'og:site_name', content:'Tech' },
@@ -52,6 +52,12 @@ export default {
 </script>
 
 <style>
+
+#logo {
+  height: 31px;
+  width: 125px;
+}
+
 body {
   background-color: rgb(241, 241, 241);
 }
