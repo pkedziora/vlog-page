@@ -12,10 +12,7 @@ phases:
     commands:
        - yarn install
        - yarn data #temporary
-       - yarn build
-       - pwd
-       - ls
-       - ls dist
+       - yarn run generate
 
 artifacts:    
   files:
