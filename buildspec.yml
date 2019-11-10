@@ -11,4 +11,5 @@ phases:
   build:
     commands:
        - yarn install
+       - yarn data #temporary
        - yarn build
