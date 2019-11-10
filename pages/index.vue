@@ -36,7 +36,7 @@ export default {
         { property:'og:type', content:'website' },
         { property:'og:title', content:'Vlog.Page - Tech' },
         { property:'og:description', content:'Latests videos from tech youtubers, laptop, mobile tech, gadget reviews and more' },
-        { property:'og:image', content:'' },
+        { property:'og:image', content:'https://vlog.page/images/logo.png' },
         { property:'og:url', content:'https://vlog.page' },
         { property:'og:site_name', content:'Tech' },
       ],
