@@ -1,0 +1,10 @@
+version: 0.2
+
+env:
+  parameter-store:
+    GOOGLE_API_KEY: /CodeBuild/GOOGLE_API_KEY
+
+phases:
+  build:
+    commands:
+       - yarn build
