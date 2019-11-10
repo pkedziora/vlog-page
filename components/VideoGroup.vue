@@ -70,7 +70,6 @@ h1 {
 
 .thumbnailContainer {
   height: 100%;
-  width: 200px;
   padding: 20px;
 }
 

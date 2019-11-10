@@ -3,7 +3,7 @@
 <div class="card videoItemContainer">
   <div class="card-image">
 
-      <iframe loading="lazy" type="text/html" width="640" height="360"
+      <iframe loading="lazy" type="text/html"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
           :src="'https://www.youtube.com/embed/' + video.id" frameborder="0"
@@ -54,8 +54,17 @@ export default {
 </script>
 
 <style>
+
 iframe {
+  width: 640px;
   height: 360px
+}
+
+@media screen and (max-width: 640px) {
+  iframe {
+    width: 320px;
+    height: 180px;
+  }
 }
 
 .videoItemContainer {
