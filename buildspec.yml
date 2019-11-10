@@ -13,3 +13,7 @@ phases:
        - yarn install
        - yarn data #temporary
        - yarn build
+
+artifacts:    
+  files:
+    - 'dist/**/*'
