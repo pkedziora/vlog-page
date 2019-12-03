@@ -1,32 +1,37 @@
 <template>
-<div class="videoListContainer">
-  <ul>
-    <li v-for="group in videosGrouped" :key="group.id">
-      <video-group :group="group" />
-    </li>
-  </ul>
-</div>
+  <div class="videoListContainer">
+    <ul>
+      <li v-for="video in sortedVideos" :key="video.id">
+        <video-item :video="video" :group="video.channel" />
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
-import VideoGroup from './VideoGroup';
+import VideoItem from "./VideoItem";
 
 export default {
-  name: 'VideoList',
-  components: {VideoGroup},
-  data () {
+  name: "VideoList",
+  components: { VideoItem },
+  data() {
     return {
-      videosGrouped: []
+      videos: []
+    };
+  },
+  methods: {},
+  computed: {
+    sortedVideos: function() {
+      this.videos.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+      });
+      return this.videos;
     }
   },
-  methods: {
-  },
-  computed: {
-  },
-  async created () {
-    this.videosGrouped = this.$store.state.videosGrouped;
+  async created() {
+    this.videos = this.$store.state.videos;
   }
-}
+};
 </script>
 
 <style>

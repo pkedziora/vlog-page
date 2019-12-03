@@ -15,10 +15,12 @@
 </template>
 
 <script>
+import VideoGroupList from '~/components/VideoGroupList.vue'
 import VideoList from '~/components/VideoList.vue'
 
 export default {
   components: {
+    VideoGroupList,
     VideoList
   },
   data () {

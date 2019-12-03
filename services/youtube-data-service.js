@@ -43,4 +43,26 @@ export default {
 
     return channelsWithVideos;
   },
+  async GetVideos() {
+    const uploadIds = channels.map((ch) => ch.uploads);
+    const videos = [];
+
+    const promises = [];
+    for (let i = 0; i < uploadIds.length; i++) {
+      promises.push(this.getVideosForPlaylist(uploadIds[i], 5));
+    }
+
+    const result = await Promise.all(promises);
+
+    for (let i = 0; i < uploadIds.length; i++) {
+      const channelClone = _.cloneDeep(channels[i]);
+      for (let j = 0; j < result[i].length; j++) {
+        result[i][j].channel = channelClone;
+      }
+
+      videos.push(...result[i]);
+    }
+
+    return videos;
+  },
 };

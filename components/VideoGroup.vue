@@ -1,18 +1,6 @@
 <template>
 <div class="groupContainer">
-      <div class="bannerContainer">
-          <img :src="group.image.bannerImageUrl" :alt="group.title + ' banner image'"/>
-      </div>
-      <div class="channelHeader">
-        <div class="thumbnailContainer">
-          <img :src="group.thumbnails.medium.url" :alt="group.title + ' thumbnail'"/>
-        </div>
-        <div class="channelData">
-          <h1>{{group.title}}</h1>
-          <p>{{group.description}}</p>
-        </div>
-      </div>
-
+      <!-- <ChannelInfo :title="group.title" :description="group.description" :bannerUrl="group.image.bannerImageUrl" :thumbnailUrl="group.thumbnails.medium.url"/> -->
       <div class="videoGroupContainer">
         <ul>
         <li v-for="video in videosFiltered" :key="video.id">
@@ -21,17 +9,17 @@
         </ul>
         <button class="button is-link" @click="showMore(group.id)">Show more from {{group.title}}</button>
       </div>
-
 </div>
 
 </template>
 
 <script>
 import VideoItem from './VideoItem';
+import ChannelInfo from './ChannelInfo';
 
 export default {
 name: 'VideoGroup',
-components: {VideoItem},
+components: {VideoItem, ChannelInfo},
 props: {
   group: Object
 },

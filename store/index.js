@@ -12,8 +12,10 @@ export const state = () => ({
 
 export const actions = {
   async nuxtServerInit({ commit }) {
-    const videosGropued = await VideoDataService.GetVideosGrouped();
-    commit('setVideosGrouped', videosGropued);
+    const videosGrouped = await VideoDataService.GetVideosGrouped();
+    const videos = await VideoDataService.GetVideos();
+    commit('setVideos', videos);
+    commit('setVideosGrouped', videosGrouped);
     commit('setVersion', getVersion());
   },
 };
