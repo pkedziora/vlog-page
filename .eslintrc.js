@@ -19,7 +19,7 @@ module.exports = {
     "no-plusplus": "off",
     "no-param-reassign": "off",
     "import/no-extraneous-dependencies": "off",
-    "linebreak-style": "off"
+    "linebreak-style": "off",
   },
   settings: {
     'import/resolver': {
@@ -28,7 +28,8 @@ module.exports = {
           resolve: {
             alias: {
               '~': __dirname,
-            }
+            },
+            extensions: [".js", ".vue"]
           }
         }
       }

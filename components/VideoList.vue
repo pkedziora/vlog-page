@@ -9,28 +9,26 @@
 </template>
 
 <script>
-import VideoItem from "./VideoItem";
+import VideoItem from './VideoItem';
 
 export default {
-  name: "VideoList",
+  name: 'VideoList',
   components: { VideoItem },
   data() {
     return {
-      videos: []
+      videos: [],
     };
   },
   methods: {},
   computed: {
-    sortedVideos: function() {
-      this.videos.sort((a, b) => {
-        return new Date(b.date) - new Date(a.date);
-      });
+    sortedVideos() {
+      this.videos.sort((a, b) => new Date(b.date) - new Date(a.date));
       return this.videos;
-    }
+    },
   },
   async created() {
     this.videos = this.$store.state.videos;
-  }
+  },
 };
 </script>
 

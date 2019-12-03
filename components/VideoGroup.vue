@@ -1,13 +1,16 @@
 <template>
 <div class="groupContainer">
-      <!-- <ChannelInfo :title="group.title" :description="group.description" :bannerUrl="group.image.bannerImageUrl" :thumbnailUrl="group.thumbnails.medium.url"/> -->
+      <!-- <ChannelInfo :title="group.title" :description="group.description"
+      :bannerUrl="group.image.bannerImageUrl"
+      :thumbnailUrl="group.thumbnails.medium.url"/> -->
       <div class="videoGroupContainer">
         <ul>
         <li v-for="video in videosFiltered" :key="video.id">
           <video-item :video="video" :group="group" />
         </li>
         </ul>
-        <button class="button is-link" @click="showMore(group.id)">Show more from {{group.title}}</button>
+        <button class="button is-link" @click="showMore(group.id)">
+          Show more from {{group.title}}</button>
       </div>
 </div>
 
@@ -18,29 +21,28 @@ import VideoItem from './VideoItem';
 import ChannelInfo from './ChannelInfo';
 
 export default {
-name: 'VideoGroup',
-components: {VideoItem, ChannelInfo},
-props: {
-  group: Object
-},
-data() {
-  return {
+  name: 'VideoGroup',
+  components: { VideoItem, ChannelInfo },
+  props: {
+    group: Object,
+  },
+  data() {
+    return {
       allGroupCount: 50,
-      groupCount: 3
-    }
-},
+      groupCount: 3,
+    };
+  },
   methods: {
-    showMore(id)
-    {
+    showMore() {
       this.groupCount = this.allGroupCount;
-    }
+    },
   },
   computed: {
-    videosFiltered () {
-      return this.group.videos.filter((item,i) => i < this.groupCount);
-    }
-  }
-}
+    videosFiltered() {
+      return this.group.videos.filter((item, i) => i < this.groupCount);
+    },
+  },
+};
 </script>
 
 <style>

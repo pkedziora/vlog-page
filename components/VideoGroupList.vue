@@ -13,20 +13,20 @@ import VideoGroup from './VideoGroup';
 
 export default {
   name: 'VideoGroupList',
-  components: {VideoGroup},
-  data () {
+  components: { VideoGroup },
+  data() {
     return {
-      videosGrouped: []
-    }
+      videosGrouped: [],
+    };
   },
   methods: {
   },
   computed: {
   },
-  async created () {
+  async created() {
     this.videosGrouped = this.$store.state.videosGrouped;
-  }
-}
+  },
+};
 </script>
 
 <style>

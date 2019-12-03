@@ -38,9 +38,9 @@ export default {
   name: 'VideoItem',
   props: {
     video: Object,
-    group: Object
-  }
-}
+    group: Object,
+  },
+};
 </script>
 
 <style>

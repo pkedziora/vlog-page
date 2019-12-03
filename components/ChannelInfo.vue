@@ -22,8 +22,8 @@ export default {
     title: String,
     description: String,
     bannerUrl: String,
-    thumbnailUrl: String
-  }
+    thumbnailUrl: String,
+  },
 };
 </script>
 

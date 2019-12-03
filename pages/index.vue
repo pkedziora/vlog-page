@@ -15,32 +15,32 @@
 </template>
 
 <script>
-import VideoGroupList from '~/components/VideoGroupList.vue'
-import VideoList from '~/components/VideoList.vue'
+import VideoGroupList from '~/components/VideoGroupList';
+import VideoList from '~/components/VideoList';
 
 export default {
   components: {
     VideoGroupList,
-    VideoList
+    VideoList,
   },
-  data () {
+  data() {
     return {
-    }
+    };
   },
-  async created () {
+  async created() {
     this.version = this.$store.state.version;
   },
-  head () {
+  head() {
     return {
-      title: `Vlog.Page - Tech`,
+      title: 'Vlog.Page - Tech',
       meta: [
         { hid: 'description', name: 'description', content: 'Latests videos from tech youtubers. Laptop, mobile tech, gadget reviews and more' },
-        { property:'og:type', content:'website' },
-        { property:'og:title', content:'Vlog.Page - Tech' },
-        { property:'og:description', content:'Latests videos from tech youtubers, laptop, mobile tech, gadget reviews and more' },
-        { property:'og:image', content:'https://vlog.page/images/logo.png' },
-        { property:'og:url', content:'https://vlog.page' },
-        { property:'og:site_name', content:'Tech' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:title', content: 'Vlog.Page - Tech' },
+        { property: 'og:description', content: 'Latests videos from tech youtubers, laptop, mobile tech, gadget reviews and more' },
+        { property: 'og:image', content: 'https://vlog.page/images/logo.png' },
+        { property: 'og:url', content: 'https://vlog.page' },
+        { property: 'og:site_name', content: 'Tech' },
       ],
       link: [
         {
@@ -48,9 +48,9 @@ export default {
           href: 'https://vlog.page/',
         },
       ],
-    }
-  }
-}
+    };
+  },
+};
 </script>
 
 <style>
