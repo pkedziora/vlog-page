@@ -48,6 +48,15 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/separate-env',
     ['@nuxtjs/google-tag-manager', { id: 'GTM-PV3CJ53' }],
+    ['nuxt-fontawesome', {
+      component: 'fa',
+      imports: [
+        {
+          set: '@fortawesome/free-solid-svg-icons',
+          icons: ['faSearch'],
+        },
+      ],
+    }],
   ],
   eslint: {
     /* module options */

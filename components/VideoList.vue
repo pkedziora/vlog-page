@@ -1,8 +1,11 @@
 <template>
   <div class="videoListContainer">
     <div class="field">
-      <p class="control">
+      <p class="control has-icons-left">
         <input v-model="searchTerm" class="input" type="text" placeholder="Search" />
+        <span class="icon is-small is-left">
+          <fa :icon="['fas', 'search']" />
+        </span>
       </p>
     </div>
     <ul>
@@ -43,7 +46,11 @@ export default {
   },
   computed: {
     filteredVideos() {
-      return SearchService.filterVideos(this.videos, this.visibleVideoCount, this.searchTerm);
+      return SearchService.filterVideos(
+        this.videos,
+        this.visibleVideoCount,
+        this.searchTerm
+      );
     }
   },
   async created() {
