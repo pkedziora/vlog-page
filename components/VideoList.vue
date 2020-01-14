@@ -2,7 +2,7 @@
   <div class="videoListContainer">
     <div class="field">
       <p class="control has-icons-left">
-        <input v-model="searchTerm" class="input" type="text" placeholder="Search" />
+        <input v-model="searchTerm" class="input" type="text" placeholder="Search" @keypress="onSearchChange"/>
         <span class="icon is-small is-left">
           <fa :icon="['fas', 'search']" />
         </span>
@@ -32,6 +32,9 @@ export default {
     };
   },
   methods: {
+    onSearchChange() {
+      this.visibleVideoCount = appconfig.pageSize;
+    },
     bindScroll() {
       window.onscroll = () => {
         const isBottom = document.documentElement.scrollTop + window.innerHeight >= document.documentElement.offsetHeight - 20;
