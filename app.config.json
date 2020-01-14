@@ -8,6 +8,6 @@
       "UCVYamHliCI9rw1tHR1xbkfw"
     ]
   },
-  "videosPerChannel": 10,
-  "pageSize": 5
+  "videosPerChannel": 50,
+  "pageSize": 10
 }

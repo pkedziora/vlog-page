@@ -17,41 +17,39 @@
 </template>
 
 <script>
-import VideoItem from "./VideoItem";
-import appconfig from "~/app.config.json";
-import SearchService from "~/services/search-service";
+import VideoItem from './VideoItem';
+import appconfig from '~/app.config.json';
+import SearchService from '~/services/search-service';
 
 export default {
-  name: "VideoList",
+  name: 'VideoList',
   components: { VideoItem },
   data() {
     return {
       videos: [],
       visibleVideoCount: appconfig.pageSize,
-      searchTerm: ""
+      searchTerm: '',
     };
   },
   methods: {
     bindScroll() {
       window.onscroll = () => {
-        let isBottom =
-          document.documentElement.scrollTop + window.innerHeight ===
-          document.documentElement.offsetHeight;
-
+        const isBottom = document.documentElement.scrollTop + window.innerHeight >= document.documentElement.offsetHeight - 20;
+       
         if (isBottom && this.visibleVideoCount < this.videos.length) {
           this.visibleVideoCount += appconfig.pageSize;
         }
       };
-    }
+    },
   },
   computed: {
     filteredVideos() {
       return SearchService.filterVideos(
         this.videos,
         this.visibleVideoCount,
-        this.searchTerm
+        this.searchTerm,
       );
-    }
+    },
   },
   async created() {
     this.videos = this.$store.state.videos;
@@ -59,7 +57,7 @@ export default {
   },
   mounted() {
     this.bindScroll();
-  }
+  },
 };
 </script>
 
