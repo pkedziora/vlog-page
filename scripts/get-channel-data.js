@@ -1,6 +1,8 @@
 const axios = require('axios');
 const fs = require('fs');
-const channels = require('./input/channel-names.json');
+const appconfig = require('../app.config.json');
+
+const { channels } = appconfig;
 
 function BuildUrl(mode, param) {
   switch (mode) {

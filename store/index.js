@@ -12,10 +12,8 @@ export const state = () => ({
 
 export const actions = {
   async nuxtServerInit({ commit }) {
-    const videosGrouped = await VideoDataService.GetVideosGrouped();
     const videos = await VideoDataService.GetVideos();
     commit('setVideos', videos);
-    commit('setVideosGrouped', videosGrouped);
     commit('setVersion', getVersion());
   },
 };
@@ -23,9 +21,6 @@ export const actions = {
 export const mutations = {
   setVideos(currentState, value) {
     currentState.videos = value;
-  },
-  setVideosGrouped(currentState, value) {
-    currentState.videosGrouped = value;
   },
   setVersion(currentState, value) {
     currentState.version = value;

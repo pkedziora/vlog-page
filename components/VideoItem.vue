@@ -19,7 +19,6 @@
       </div>
       <div class="media-content">
         <p class="title is-5">{{group.title}}</p>
-        <!-- <p class="subtitle is-6">@johnsmith</p> -->
       </div>
     </div>
 

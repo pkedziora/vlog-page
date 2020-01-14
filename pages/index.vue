@@ -15,12 +15,10 @@
 </template>
 
 <script>
-import VideoGroupList from '~/components/VideoGroupList';
 import VideoList from '~/components/VideoList';
 
 export default {
   components: {
-    VideoGroupList,
     VideoList,
   },
   data() {

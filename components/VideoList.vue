@@ -1,7 +1,12 @@
 <template>
   <div class="videoListContainer">
+    <div class="field">
+      <p class="control">
+        <input v-model="searchTerm" class="input" type="text" placeholder="Search" />
+      </p>
+    </div>
     <ul>
-      <li v-for="video in sortedVideos" :key="video.id">
+      <li v-for="video in filteredVideos" :key="video.id">
         <video-item :video="video" :group="video.channel" />
       </li>
     </ul>
@@ -9,26 +14,45 @@
 </template>
 
 <script>
-import VideoItem from './VideoItem';
+import VideoItem from "./VideoItem";
+import appconfig from "~/app.config.json";
+import SearchService from "~/services/search-service";
 
 export default {
-  name: 'VideoList',
+  name: "VideoList",
   components: { VideoItem },
   data() {
     return {
       videos: [],
+      visibleVideoCount: appconfig.pageSize,
+      searchTerm: ""
     };
   },
-  methods: {},
+  methods: {
+    bindScroll() {
+      window.onscroll = () => {
+        let isBottom =
+          document.documentElement.scrollTop + window.innerHeight ===
+          document.documentElement.offsetHeight;
+
+        if (isBottom && this.visibleVideoCount < this.videos.length) {
+          this.visibleVideoCount += appconfig.pageSize;
+        }
+      };
+    }
+  },
   computed: {
-    sortedVideos() {
-      this.videos.sort((a, b) => new Date(b.date) - new Date(a.date));
-      return this.videos;
-    },
+    filteredVideos() {
+      return SearchService.filterVideos(this.videos, this.visibleVideoCount, this.searchTerm);
+    }
   },
   async created() {
     this.videos = this.$store.state.videos;
+    this.videos.sort((a, b) => new Date(b.date) - new Date(a.date));
   },
+  mounted() {
+    this.bindScroll();
+  }
 };
 </script>
 

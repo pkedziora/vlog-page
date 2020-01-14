@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import { axios } from '~/services/axios-service';
 import channels from '~/data/channels.json';
+import appconfig from '~/app.config.json';
 
 export default {
   async getVideosForPlaylist(playlistId, count) {
@@ -24,32 +25,13 @@ export default {
 
     return null;
   },
-  async GetVideosGrouped() {
-    const uploadIds = channels.map((ch) => ch.uploads);
-    const channelsWithVideos = [];
-
-    const promises = [];
-    for (let i = 0; i < uploadIds.length; i++) {
-      promises.push(this.getVideosForPlaylist(uploadIds[i], 5));
-    }
-
-    const result = await Promise.all(promises);
-
-    for (let i = 0; i < uploadIds.length; i++) {
-      const channelClone = _.cloneDeep(channels[i]);
-      channelClone.videos = result[i];
-      channelsWithVideos.push(channelClone);
-    }
-
-    return channelsWithVideos;
-  },
   async GetVideos() {
     const uploadIds = channels.map((ch) => ch.uploads);
     const videos = [];
 
     const promises = [];
     for (let i = 0; i < uploadIds.length; i++) {
-      promises.push(this.getVideosForPlaylist(uploadIds[i], 5));
+      promises.push(this.getVideosForPlaylist(uploadIds[i], appconfig.videosPerChannel));
     }
 
     const result = await Promise.all(promises);
