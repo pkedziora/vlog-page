@@ -2,8 +2,7 @@ import Fuse from 'fuse.js';
 
 export default {
   filterVideos(videos, count, searchTerm) {
-    if (!searchTerm)
-    {
+    if (!searchTerm) {
       return videos.slice(0, count);
     }
 
