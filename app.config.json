@@ -15,6 +15,6 @@
       "UCVYamHliCI9rw1tHR1xbkfw"
     ]
   },
-  "videosPerChannel": 50,
-  "pageSize": 10
+  "videosPerChannel": 25,
+  "pageSize": 5
 }
