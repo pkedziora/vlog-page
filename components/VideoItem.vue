@@ -23,7 +23,7 @@
     </div>
 
     <div class="content">
-      <span class="title is-4">
+      <span class="title is-4 truncate">
           {{video.title}}
       </span>
       <time datetime="video.date">{{ video.date | formatDate}}</time>
@@ -43,13 +43,23 @@ export default {
 </script>
 
 <style>
-
 iframe {
   width: 640px;
   height: 360px
 }
 
+.truncate {
+  width: 700px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media screen and (max-width: 640px) {
+  .truncate {
+    width: 320px;
+  }
+
   iframe {
     width: 320px;
     height: 180px;
@@ -58,9 +68,8 @@ iframe {
 
 .videoItemContainer {
   background-color: white;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   padding-top: 30px;
-  padding-bottom: 30px;
 }
 </style>
